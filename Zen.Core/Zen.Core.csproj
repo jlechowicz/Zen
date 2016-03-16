@@ -45,8 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IOClass.cs" />
+    <Compile Include="Interfaces\IOConnection.cs" />
     <Compile Include="Interfaces\IODatabase.cs" />
     <Compile Include="Interfaces\IOProperty.cs" />
+    <Compile Include="Interfaces\IORole.cs" />
+    <Compile Include="Interfaces\IOUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

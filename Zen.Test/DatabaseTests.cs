@@ -9,37 +9,30 @@ namespace Zen.Test
     public class DatabaseTests
     {
         [TestMethod]
-        public void ConnectToDatabaseTest()
-        {
-            var database = Substitute.For<IODatabase>();
-            string username = string.Empty;
-            string password = string.Empty;
-            database.Connect(username, password).Returns(1);
-            int result = database.Connect(username, password);
-            Assert.AreEqual(1, result);
-        }
-
-        [TestMethod]
-        public void InvalidLoginTest()
-        {
-            var database = Substitute.For<IODatabase>();
-            string username = "username";
-            string password = "invalidpassword";
-            database.Connect(username, password).Returns(0);
-            int result = database.Connect(username, password);
-            Assert.AreEqual(0, result);
-        }
-
-        [TestMethod]
         public void GetClassesTest()
         {
             var database = Substitute.For<IODatabase>();
-            string username = string.Empty;
-            string password = string.Empty;
-            database.Connect(username, password).Returns(1);
-            database.GetClasses().Returns(new IOClass[] { });
-            IOClass[] classes = database.GetClasses();
+            database.Classes.Returns(new IOClass[] { });
+            IOClass[] classes = database.Classes;
             Assert.AreEqual(0, classes.Length);
+        }
+
+        [TestMethod]
+        public void GetUsersTest()
+        {
+            var database = Substitute.For<IODatabase>();
+            database.Users.Returns(new IOUser[] { });
+            IOUser[] users = database.Users;
+            Assert.AreEqual(0, users.Length);
+        }
+
+        [TestMethod]
+        public void GetRolesTest()
+        {
+            var database = Substitute.For<IODatabase>();
+            database.Roles.Returns(new IORole[] { });
+            IORole[] roles = database.Roles;
+            Assert.AreEqual(0, roles.Length);
         }
     }
 }

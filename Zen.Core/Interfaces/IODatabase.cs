@@ -8,12 +8,9 @@ namespace Zen.Core.Interfaces
 {
     public interface IODatabase
     {
-        string ServerAddress { get; set; }
         string Name { get; set; }
-        int Port { get; set; }
-        int Connect(string username, string password);
-        IOClass[] GetClasses();
-        object[] GetUsers();
-        object[] GetRoles();
+        IOClass[] Classes { get; set; }
+        IOUser[] Users { get; set; }
+        IORole[] Roles { get; set; }
     }
 }
