@@ -11,8 +11,7 @@ namespace Zen.Test
     {
         [TestMethod]
         public void CreateDatabaseTest()
-        {
-            
+        {         
             var testServer = UnityContainer.Resolve<IZServer>();
 
             using (testServer)
@@ -21,16 +20,13 @@ namespace Zen.Test
                 Assert.IsTrue(result);
                 Assert.IsTrue(testServer.DatabaseExist("FooDB"));
             }
-
-            //testClient.DropDatabasePool("UnitTestDatabase");
-            //Assert.AreEqual(0, testClient.DatabasePoolCurrentSize("UnitTestDatabase"));
         }
 
         [TestMethod]
         public void DeleteDatabaseTest()
         {
             var testServer = UnityContainer.Resolve<IZServer>();
-
+            
             using (testServer)
             {
                 if (!testServer.DatabaseExist("BarDB"))
