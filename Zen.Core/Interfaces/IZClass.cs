@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Zen.Core.Interfaces
 {
-    public interface IOClass
+    public interface IZClass
     {
         string Name { get; set; }
-        IOProperty[] Properties { get; set; }
+        IZProperty[] Properties { get; set; }
     }
 }

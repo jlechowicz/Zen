@@ -1,6 +1,6 @@
 ﻿namespace Zen.Core.Interfaces
 {
-    public interface IORole
+    public interface IZUser
     {
     }
 }

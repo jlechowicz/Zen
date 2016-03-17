@@ -11,27 +11,27 @@ namespace Zen.Test
         [TestMethod]
         public void GetClassesTest()
         {
-            var database = Substitute.For<IODatabase>();
-            database.Classes.Returns(new IOClass[] { });
-            IOClass[] classes = database.Classes;
+            var database = Substitute.For<IZDatabase>();
+            database.Classes.Returns(new IZClass[] { });
+            IZClass[] classes = database.Classes;
             Assert.AreEqual(0, classes.Length);
         }
 
         [TestMethod]
         public void GetUsersTest()
         {
-            var database = Substitute.For<IODatabase>();
-            database.Users.Returns(new IOUser[] { });
-            IOUser[] users = database.Users;
+            var database = Substitute.For<IZDatabase>();
+            database.Users.Returns(new IZUser[] { });
+            IZUser[] users = database.Users;
             Assert.AreEqual(0, users.Length);
         }
 
         [TestMethod]
         public void GetRolesTest()
         {
-            var database = Substitute.For<IODatabase>();
-            database.Roles.Returns(new IORole[] { });
-            IORole[] roles = database.Roles;
+            var database = Substitute.For<IZDatabase>();
+            database.Roles.Returns(new IZRole[] { });
+            IZRole[] roles = database.Roles;
             Assert.AreEqual(0, roles.Length);
         }
     }

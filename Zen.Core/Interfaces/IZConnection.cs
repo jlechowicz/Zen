@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zen.Core.Interfaces
 {
-    public interface IOConnection : IDisposable
+    public interface IZConnection : IDisposable
     {
         string Username { get; set; }
         string Password { get; set; }

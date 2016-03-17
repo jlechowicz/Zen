@@ -44,20 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IOClass.cs" />
-    <Compile Include="Interfaces\IOConnection.cs" />
-    <Compile Include="Interfaces\IODatabase.cs" />
-    <Compile Include="Interfaces\IOProperty.cs" />
-    <Compile Include="Interfaces\IORole.cs" />
-    <Compile Include="Interfaces\IOUser.cs" />
+    <Compile Include="Entities\ZDatabase.cs" />
+    <Compile Include="Interfaces\IZClass.cs" />
+    <Compile Include="Interfaces\IZConnection.cs" />
+    <Compile Include="Interfaces\IZDatabase.cs" />
+    <Compile Include="Interfaces\IZProperty.cs" />
+    <Compile Include="Interfaces\IZRole.cs" />
+    <Compile Include="Interfaces\IZUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

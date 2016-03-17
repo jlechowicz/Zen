@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Zen.Core.Interfaces
 {
-    public interface IODatabase
+    public interface IZProperty
     {
         string Name { get; set; }
-        IOClass[] Classes { get; set; }
-        IOUser[] Users { get; set; }
-        IORole[] Roles { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Zen.Test
         [TestMethod]
         public void ConnectToDatabaseTest()
         {
-            var connection = Substitute.For<IOConnection>();
+            var connection = Substitute.For<IZConnection>();
             connection.Open().Returns(0);
             connection.Close().Returns(0);
             using (connection)
@@ -26,7 +26,7 @@ namespace Zen.Test
         [TestMethod]
         public void InvalidLoginTest()
         {
-            var connection = Substitute.For<IOConnection>();
+            var connection = Substitute.For<IZConnection>();
             connection.Username = "InvalidUsername";
             connection.Password = "InvalidPassword";
             connection.Open().Returns(1);
