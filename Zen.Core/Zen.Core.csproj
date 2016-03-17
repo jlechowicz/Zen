@@ -62,8 +62,11 @@
   <ItemGroup>
     <Compile Include="Entities\ZClass.cs" />
     <Compile Include="Entities\ZClient.cs" />
+    <Compile Include="Entities\ZProperty.cs" />
+    <Compile Include="Entities\ZRole.cs" />
     <Compile Include="Entities\ZServer.cs" />
     <Compile Include="Entities\ZDatabase.cs" />
+    <Compile Include="Entities\ZUser.cs" />
     <Compile Include="Interfaces\IZClass.cs" />
     <Compile Include="Interfaces\IZClient.cs" />
     <Compile Include="Interfaces\IZServer.cs" />

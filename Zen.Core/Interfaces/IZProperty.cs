@@ -9,5 +9,6 @@ namespace Zen.Core.Interfaces
     public interface IZProperty
     {
         string Name { get; set; }
+        Orient.Client.OType ValueType { get; set; }
     }
 }
