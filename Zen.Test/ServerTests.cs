@@ -10,19 +10,36 @@ namespace Zen.Test
     public class ServerTests : UnitTestBase
     {
         [TestMethod]
-        public void ConnectToDatabaseTest()
+        public void CreateDatabaseTest()
         {
+            
             var testServer = UnityContainer.Resolve<IZServer>();
+
             using (testServer)
             {
-                Assert.IsTrue(testServer.DatabaseExist("UnitTestDatabase"));
+                var result = testServer.CreateDatabase("FooDB", Orient.Client.ODatabaseType.Document, Orient.Client.OStorageType.Local);
+                Assert.IsTrue(result);
+                Assert.IsTrue(testServer.DatabaseExist("FooDB"));
             }
+
+            //testClient.DropDatabasePool("UnitTestDatabase");
+            //Assert.AreEqual(0, testClient.DatabasePoolCurrentSize("UnitTestDatabase"));
         }
 
         [TestMethod]
-        public void InvalidLoginTest()
+        public void DeleteDatabaseTest()
         {
-            throw new NotImplementedException();
+            var testServer = UnityContainer.Resolve<IZServer>();
+
+            using (testServer)
+            {
+                if (!testServer.DatabaseExist("BarDB"))
+                {
+                    testServer.CreateDatabase("BarDB", Orient.Client.ODatabaseType.Document, Orient.Client.OStorageType.Local);
+                }
+                testServer.DropDatabase("BarDB");
+                Assert.IsFalse(testServer.DatabaseExist("BarDB"));
+            }
         }
     }
 }
