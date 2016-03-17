@@ -45,26 +45,27 @@ namespace Zen.Test
         private static void SetupClientMocks(IZClient client)
         {
             client
-                            .When(x => x.CreateDatabasePool(Arg.Any<string>(), Arg.Any<int>(), Arg.Any<string>(), Arg.Any<Orient.Client.ODatabaseType>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<int>(), Arg.Any<string>()))
-                            .Do(x =>
-                            {
-                                string username = x.ArgAt<string>(4).Trim().ToLowerInvariant();
-                                string password = x.ArgAt<string>(5).Trim().ToLowerInvariant();
+                .When(x => 
+                    x.CreateDatabasePool(Arg.Any<string>(), Arg.Any<int>(), Arg.Any<string>(), Arg.Any<Orient.Client.ODatabaseType>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<int>(), Arg.Any<string>()))
+                .Do(x =>
+                {
+                    string username = x.ArgAt<string>(4).Trim().ToLowerInvariant();
+                    string password = x.ArgAt<string>(5).Trim().ToLowerInvariant();
 
-                                if (username.Equals(INVALID_USERNAME) || username.Equals(INVALID_PASSWORD))
-                                {
-                                    throw new ArgumentException("Invalid login credentials.");
-                                }
+                    if (username.Equals(INVALID_USERNAME) || username.Equals(INVALID_PASSWORD))
+                    {
+                        throw new ArgumentException("Invalid login credentials.");
+                    }
 
-                                if (_databasePool.ContainsKey(x.ArgAt<string>(7)))
-                                {
-                                    _databasePool[x.ArgAt<string>(7)]++;
-                                }
-                                else
-                                {
-                                    _databasePool.Add(x.ArgAt<string>(7), 1);
-                                }
-                            });
+                    if (_databasePool.ContainsKey(x.ArgAt<string>(7)))
+                    {
+                        _databasePool[x.ArgAt<string>(7)]++;
+                    }
+                    else
+                    {
+                        _databasePool.Add(x.ArgAt<string>(7), 1);
+                    }
+                });
 
             client
                 .DatabasePoolCurrentSize(Arg.Any<string>()).Returns(x => _databasePool[x.Arg<string>()]);
@@ -102,7 +103,7 @@ namespace Zen.Test
 
             server
                 .CreateDatabase(Arg.Any<string>(), Arg.Any<Orient.Client.ODatabaseType>(), Arg.Any<Orient.Client.OStorageType>())
-                .Returns(x => 
+                .Returns(x =>
                 {
                     if (!_databases.Contains(x.Arg<string>()))
                     {
