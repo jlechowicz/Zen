@@ -18,10 +18,6 @@ namespace Zen.Core.Entities
                 ZClass[] classes = QueryClassNames();
                 return classes;
             }
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
         private ZClass[] QueryClassNames()
@@ -35,9 +31,9 @@ namespace Zen.Core.Entities
 
         public string Name { get; set; }
 
-        public IZRole[] Roles { get; set; }
+        public IZRole[] Roles { get; }
 
-        public IZUser[] Users { get; set; }
+        public IZUser[] Users { get; }
 
         public ZDatabase(string clientAlias) : base(clientAlias) { }
     }

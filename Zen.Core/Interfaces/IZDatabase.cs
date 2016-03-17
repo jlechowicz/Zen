@@ -9,8 +9,8 @@ namespace Zen.Core.Interfaces
     public interface IZDatabase
     {
         string Name { get; set; }
-        IZClass[] Classes { get; set; }
-        IZUser[] Users { get; set; }
-        IZRole[] Roles { get; set; }
+        IZClass[] Classes { get; }
+        IZUser[] Users { get; }
+        IZRole[] Roles { get; }
     }
 }

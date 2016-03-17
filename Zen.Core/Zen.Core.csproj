@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ZClass.cs" />
     <Compile Include="Entities\ZClient.cs" />
     <Compile Include="Entities\ZServer.cs" />
     <Compile Include="Entities\ZDatabase.cs" />
