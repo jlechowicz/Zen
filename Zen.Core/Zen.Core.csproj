@@ -51,6 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -60,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Connection.cs" />
     <Compile Include="Comparers\ClassComparer.cs" />
     <Compile Include="Comparers\PropertyComparer.cs" />
     <Compile Include="Entities\ZClass.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Entities\ZServer.cs" />
     <Compile Include="Entities\ZDatabase.cs" />
     <Compile Include="Entities\ZUser.cs" />
+    <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IZClass.cs" />
     <Compile Include="Interfaces\IZClient.cs" />
     <Compile Include="Interfaces\IZServer.cs" />
