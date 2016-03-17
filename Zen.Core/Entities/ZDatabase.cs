@@ -22,7 +22,7 @@ namespace Zen.Core.Entities
 
         private ZClass[] QueryClassNames()
         {
-            var result = this.Command(query).ToSingle();
+            var result = Command(query).ToSingle();
             var schema = result.GetField<List<ODocument>>("Content");
             var classNames = schema.Select(d => d.GetField<string>("name"));
             var classes = classNames.Select(n => new ZClass { Name = n }).ToArray();
