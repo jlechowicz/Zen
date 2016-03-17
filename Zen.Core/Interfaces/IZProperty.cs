@@ -8,7 +8,8 @@ namespace Zen.Core.Interfaces
 {
     public interface IZProperty
     {
-        string Name { get; set; }
+        string PropertyName { get; set; }
         Orient.Client.OType ValueType { get; set; }
+        IZClass Class { get; set; }
     }
 }

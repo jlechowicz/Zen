@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparers\PropertyComparer.cs" />
     <Compile Include="Entities\ZClass.cs" />
     <Compile Include="Entities\ZClient.cs" />
     <Compile Include="Entities\ZProperty.cs" />

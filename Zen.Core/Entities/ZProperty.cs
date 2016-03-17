@@ -10,7 +10,9 @@ namespace Zen.Core.Entities
 {
     public class ZProperty : IZProperty
     {
-        public string Name { get; set; }
+        public IZClass Class { get; set; }
+
+        public string PropertyName { get; set; }
 
         public OType ValueType { get; set; }
     }
