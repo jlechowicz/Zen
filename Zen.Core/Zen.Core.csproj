@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\Connection.cs" />
+    <Compile Include="BusinessObjects\SynchronizationDirection.cs" />
     <Compile Include="Comparers\ClassComparer.cs" />
     <Compile Include="Comparers\PropertyComparer.cs" />
     <Compile Include="Entities\ZClass.cs" />
