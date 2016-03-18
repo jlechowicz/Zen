@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\ComparisonResult.cs" />
     <Compile Include="BusinessObjects\Connection.cs" />
+    <Compile Include="BusinessObjects\ConnectionProfile.cs" />
     <Compile Include="BusinessObjects\SynchronizationDirection.cs" />
     <Compile Include="Comparers\ClassComparer.cs" />
     <Compile Include="Comparers\PropertyComparer.cs" />
