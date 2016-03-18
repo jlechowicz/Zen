@@ -11,17 +11,6 @@ namespace Zen.Core.Entities
     {
         public string Name { get; set; }
 
-        public IZProperty[] Properties
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public IZProperty[] Properties { get; set; }
     }
 }
