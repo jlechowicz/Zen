@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Zen.Core.Interfaces
 {
-    public interface IConnection
+    public interface IConnection : IDisposable
     {
-        void OpenPool(string hostname, string databaseName, Orient.Client.ODatabaseType databaseType, string username, string password, string alias);
-        void OpenPool(string hostname, int port, string databaseName, Orient.Client.ODatabaseType databaseType, string username, string password, string alias);
-        void ClosePool(string alias);
+        string ConnectionName { get; set; }
+        void OpenPool(string hostname, string databaseName, Orient.Client.ODatabaseType databaseType, string username, string password);
+        void OpenPool(string hostname, int port, string databaseName, Orient.Client.ODatabaseType databaseType, string username, string password);
+        void ClosePool();
     }
 }

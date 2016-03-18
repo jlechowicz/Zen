@@ -14,24 +14,50 @@ namespace Zen.Core.BusinessObjects
         private readonly int DEFAULT_PORT = int.Parse(System.Configuration.ConfigurationManager.AppSettings.Get("DefaultConnectionPoolSize"));
 
         private IZClient _client;
+
+        public string ConnectionName { get; set; }
+
         public Connection(IZClient client)
         {
             _client = client;
         }
 
-        public void OpenPool(string hostname, int port, string databaseName, ODatabaseType databaseType, string username, string password, string alias)
+        public void OpenPool(string hostname, int port, string databaseName, ODatabaseType databaseType, string username, string password)
         {
-            _client.CreateDatabasePool(hostname, port, databaseName, databaseType, username, password, DEFAULT_POOL_SIZE, alias);
+            _client.CreateDatabasePool(hostname, port, databaseName, databaseType, username, password, DEFAULT_POOL_SIZE, ConnectionName);
         }
 
-        public void ClosePool(string alias)
+        public void ClosePool()
         {
-            _client.DropDatabasePool(alias);
+            _client.DropDatabasePool(ConnectionName);
         }
 
-        public void OpenPool(string hostname, string databaseName, ODatabaseType databaseType, string username, string password, string alias)
+        public void OpenPool(string hostname, string databaseName, ODatabaseType databaseType, string username, string password)
         {
-            _client.CreateDatabasePool(hostname, DEFAULT_PORT, databaseName, databaseType, username, password, DEFAULT_POOL_SIZE, alias);
+            _client.CreateDatabasePool(hostname, DEFAULT_PORT, databaseName, databaseType, username, password, DEFAULT_POOL_SIZE, ConnectionName);
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    ClosePool();
+                    ConnectionName = null;
+                }
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(true);
+        }
+        #endregion
     }
 }
