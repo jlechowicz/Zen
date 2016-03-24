@@ -25,14 +25,5 @@ namespace Zen.Test
             int count = testClient.DatabasePoolCurrentSize("DeletePool");
             Assert.AreEqual(0, count);
         }
-
-        [TestMethod]
-        public void DatabasePoolLimitTest()
-        {
-            var testClient = UnityContainer.Resolve<IZClient>();
-            testClient.CreateDatabasePool("127.0.0.1", 2424, "LimitPool", Orient.Client.ODatabaseType.Document, "TestUser", "TestPassword", 10, "LimitPool");
-            
-            Assert.Inconclusive();
-        }
     }
 }
