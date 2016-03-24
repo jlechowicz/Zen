@@ -16,7 +16,7 @@ namespace Zen.Core.Comparers
 
         public int GetHashCode(IZProperty prop)
         {
-            return string.Format("{0}{1}{2}", prop.PropertyName, prop.ValueType, prop.Class.Name).GetHashCode();
+            return string.Format("{0}{1}", prop.PropertyName, prop.ValueType).GetHashCode();
         }
     }
 }
