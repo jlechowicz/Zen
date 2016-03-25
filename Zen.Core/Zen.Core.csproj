@@ -61,10 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\ComparisonResult.cs" />
     <Compile Include="BusinessObjects\ComparisonResultType.cs" />
     <Compile Include="BusinessObjects\Connection.cs" />
     <Compile Include="BusinessObjects\ConnectionProfile.cs" />
     <Compile Include="BusinessObjects\SynchronizationDirection.cs" />
+    <Compile Include="BusinessObjects\SynchronizationResult.cs" />
     <Compile Include="Comparers\ClassComparer.cs" />
     <Compile Include="Comparers\PropertyComparer.cs" />
     <Compile Include="Entities\ZClass.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Interfaces\IComparisonEngine.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IPropertyService.cs" />
+    <Compile Include="Interfaces\ISynchronizationEngine.cs" />
     <Compile Include="Interfaces\IZClass.cs" />
     <Compile Include="Interfaces\IZClient.cs" />
     <Compile Include="Interfaces\IZServer.cs" />
