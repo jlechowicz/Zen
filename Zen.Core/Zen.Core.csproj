@@ -67,6 +67,7 @@
     <Compile Include="BusinessObjects\ConnectionProfile.cs" />
     <Compile Include="BusinessObjects\SynchronizationDirection.cs" />
     <Compile Include="BusinessObjects\SynchronizationResult.cs" />
+    <Compile Include="BusinessObjects\Unity.cs" />
     <Compile Include="Comparers\ClassComparer.cs" />
     <Compile Include="Comparers\PropertyComparer.cs" />
     <Compile Include="Entities\ZClass.cs" />
@@ -93,7 +94,9 @@
     <Compile Include="Services\PropertyService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Unity.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
